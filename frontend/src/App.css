@@ -1,0 +1,236 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  min-height: 100vh;
+  padding: 30px;
+}
+
+.App {
+  max-width: 1100px;
+  margin: auto;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.2);
+}
+
+.App h1 {
+  text-align: center;
+  color: #333;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.App form {
+  background: #f9fafb;
+  padding: 35px;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  max-width: 420px; 
+  margin: auto;
+}
+
+.App form input {
+  width: 100%;
+  height: 55px;
+  margin-bottom: 18px;
+  padding: 0 18px;
+  font-size: 16px;
+  border-radius: 12px;
+  border: 1.5px solid #ddd;
+}
+
+.App form input::placeholder {
+  color: #888;
+}
+
+.App form input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102,126,234,0.25);
+}
+
+.App form button[type="submit"] {
+  width: 100%;
+  height: 55px;
+  font-size: 17px;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #667eea, #5a67d8);
+  color: white;
+  margin-top: 10px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.App form button[type="submit"]:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 22px rgba(102,126,234,0.45);
+}
+
+.App > button {
+  display: block;
+  margin: 20px auto 0;
+  background: transparent;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  color: #667eea;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.App > button:hover {
+  color: #5a67d8;
+}
+
+
+.chat-container {
+  display: flex;
+  gap: 20px;
+  height: 650px;
+}
+
+
+.chat-list {
+  flex: 0.35;
+  background: #f9fafb;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.chat-list ul {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.chat-list li {
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.chat-list li:hover {
+  background: #e9ecff;
+}
+
+.chat-list button {
+  margin-top: auto;
+  height: 50px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #ff6b6b, #e63946);
+  color: white;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.chat-list button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(230,57,70,0.45);
+}
+
+.chat-view {
+  flex: 0.65;
+  background: #f4f6fb;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.messages {
+  flex: 1;
+  background: #eef1f7;
+  border-radius: 14px;
+  padding: 15px;
+  overflow-y: auto;
+  margin-bottom: 12px;
+}
+
+
+.message {
+  padding: 10px 16px;
+  margin-bottom: 10px;
+  border-radius: 18px;
+  max-width: 70%;
+  font-size: 14.5px;
+  line-height: 1.4;
+}
+
+
+.message.sent {
+  background: linear-gradient(135deg, #667eea, #5a67d8);
+  color: white;
+  margin-left: auto;
+  border-bottom-right-radius: 4px;
+}
+
+.message.received {
+  background: #ffffff;
+  color: #333;
+  margin-right: auto;
+  border-bottom-left-radius: 4px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+
+.message-input {
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+}
+
+.message-input input {
+  flex: 1;
+  height: 55px;
+  padding: 0 18px;
+  border-radius: 30px;
+  border: 1.5px solid #d0d5ff;
+  font-size: 16px;
+}
+
+.message-input input::placeholder {
+  color: #999;
+}
+
+.message-input input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102,126,234,0.25);
+}
+
+.message-input button {
+  height: 55px;
+  padding: 0 28px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #667eea, #5a67d8);
+  color: white;
+}
+
+.message-input button:hover {
+  box-shadow: 0 6px 18px rgba(102,126,234,0.45);
+}
