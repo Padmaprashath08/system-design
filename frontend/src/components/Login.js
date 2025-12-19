@@ -10,7 +10,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://192.168.1.35:5000/api/auth/login', { email, password });
+      const res = await axios.post('https://system-design-npf2.onrender.com/api/auth/login', { email, password });
       login(res.data.user, res.data.token);
     } catch (error) {
       alert('Login failed');
