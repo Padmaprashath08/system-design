@@ -9,7 +9,7 @@ const Register = ({ onRegister }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://192.168.1.35:5000/api/auth/register', { username, email, password });
+      await axios.post('https://system-design-npf2.onrender.com/api/auth/register', { username, email, password });
       alert('Registered successfully');
       onRegister();
     } catch (error) {
