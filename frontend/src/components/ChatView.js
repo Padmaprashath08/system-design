@@ -3,7 +3,7 @@ import axios from 'axios';
 import io from 'socket.io-client';
 import { useAuth } from '../context/AuthContext';
 
-const socket = io('http://192.168.1.35:5000');
+const socket = io('https://system-design-npf2.onrender.com');
 
 const ChatView = () => {
   const [messages, setMessages] = useState([]);
@@ -12,7 +12,7 @@ const ChatView = () => {
 
   const fetchMessages = useCallback(async () => {
     try {
-      const res = await axios.get(`http://192.168.1.35:5000/api/messages`, {
+      const res = await axios.get(`https://system-design-npf2.onrender.com/api/messages`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setMessages(res.data);
@@ -43,7 +43,7 @@ const ChatView = () => {
   const sendMessage = async () => {
     if (!newMessage.trim()) return;
     try {
-      await axios.post('http://192.168.1.35:5000/api/messages', {
+      await axios.post('https://system-design-npf2.onrender.com/api/messages', {
         content: newMessage,
       }, {
         headers: { Authorization: `Bearer ${token}` },
