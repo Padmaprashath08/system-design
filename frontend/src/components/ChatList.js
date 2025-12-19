@@ -3,7 +3,7 @@ import axios from 'axios';
 import io from 'socket.io-client';
 import { useAuth } from '../context/AuthContext';
 
-const socket = io('http://192.168.1.35:5000');
+const socket = io('https://system-design-npf2.onrender.com');
 
 const ChatList = () => {
   const [users, setUsers] = useState([]);
@@ -12,7 +12,7 @@ const ChatList = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const res = await axios.get('http://192.168.1.35:5000/api/auth/users', {
+        const res = await axios.get('https://system-design-npf2.onrender.com/api/auth/users', {
           headers: { Authorization: `Bearer ${token}` },
         });
         setUsers(res.data);
